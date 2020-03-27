@@ -1,10 +1,14 @@
 'use strict';
 let num = 266219;
 const zadacha = (num)=>{
-  let itog = (Math.floor(num/100000) %10) * (Math.floor(num/10000) %10) * (Math.floor(num/1000) %10) * (Math.floor(num/100) %10) * (Math.floor(num/10) %10) * (num % 10);
-  let pow = (itog ** 3) ;
-  let itogo = String(pow).slice(0,2);
-  let chislo = Number.parseInt(itogo);
-console.log(chislo);
+  let nuner = 0;
+  let b = 1;
+  while(num>0){
+    let a = num%10;
+    num = Math.floor(num/10);
+    b = a * b;
+  }
+  let pow = (b ** 3);
+console.log(String(pow).slice(0,2));//21
 };
 zadacha(num);
