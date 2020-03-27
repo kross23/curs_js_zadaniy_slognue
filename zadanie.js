@@ -1,6 +1,6 @@
 'use strict';
 let num = 266219;
-const zadacha = (num)=>{
+const task = (num)=>{
   let nuner = 0;
   let b = 1;
   while(num>0){
@@ -11,4 +11,4 @@ const zadacha = (num)=>{
   let pow = (b ** 3);
 console.log(String(pow).slice(0,2));//21
 };
-zadacha(num);
+task(num);
