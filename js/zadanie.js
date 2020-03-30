@@ -41,8 +41,13 @@ let getWeekDay2 = (lan) => {
   ];
 console.log(useDay[a][day]);
 };
+
 let html = document.querySelector('html');//document.getElementById('html');
+let gvalue = prompt('задайте значение языка страницы','ru');
+html.setAttribute('lang', gvalue);    // elem.setAttribute(name, value)
 let  langValue = html.getAttribute('lang'); 
+console.log(langValue);
+
 getWeekDay(langValue);//через if
 getWeekDay1(langValue);//через switch
 getWeekDay2(langValue);// тернарный оператор
