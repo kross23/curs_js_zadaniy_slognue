@@ -12,7 +12,7 @@ if(typeof(variable)!=='string'){
 }else{
  let str = variable.trim();
   if(str.length > 29){
-     str = variable.substr(0,29);
+     str = variable.substring(0,29);
     str +='...';
     return str;
   }else{
