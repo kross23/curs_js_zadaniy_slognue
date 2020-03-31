@@ -1,59 +1,33 @@
 'use strict';
+/* Создайте функцию, которая принимает 1 аргумент (название произвольное)
 
- let getWeekDay=(lan)=> {
-  let date =  new Date();
-  let daysRu = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
-  let dayEn = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  let day = date.getDay();
-  console.log(day);
-  if(lan ==='ru'){
-    console.log(daysRu);
-    console.log(' текущий день недели', daysRu[day]);
+— Если в качестве аргумента передана не строка - функция оповещает об этом пользователя
+
+— В полученной (как аргумент) строке функция должна убрать все пробелы в начале и в конце
+
+— Если строка более 30 знаков - то после 30го символа часть текста скрывается и вместо них появляются три точки (...) */
+ const foo=(variable)=>{
+if(typeof(variable)!=='string'){
+  return 'typeof:',typeof('не строка',variable);
+}else{
+ let str = variable.trim();
+  if(str.length > 29){
+     str = variable.substr(0,29);
+    str +='...';
+    return str;
   }else{
-    console.log(dayEn);
-    console.log('текущий день недели',dayEn[day]);
+    return str;
   }
-};
-let getWeekDay1 = (lan) => {
-  let date =  new Date();
-  let daysRu = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
-  let dayEn = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  let day = date.getDay();
-
-   switch (lan) {
-    case 'ru':
-      console.log(daysRu);
-      console.log(' текущий день недели', daysRu[day]);
-        break;
-      case 'en':
-        console.log(dayEn);
-    console.log('текущий день недели',dayEn[day]);
-        break;
-  }
-};
-let getWeekDay2 = (lan) => {
-  let date =  new Date();
-  let day = date.getDay();
-  let a = lan === 'en' ? 1:0;
-  let useDay = [
-      ['Воскресенье','Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
-      ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
-  ];
-console.log(useDay[a][day]);
-};
-
-let html = document.querySelector('html');//document.getElementById('html');
-let gvalue = prompt('задайте значение языка страницы','ru');
-html.setAttribute('lang', gvalue);    // elem.setAttribute(name, value)
-let  langValue = html.getAttribute('lang'); 
-console.log(langValue);
-
-getWeekDay(langValue);//через if
-getWeekDay1(langValue);//через switch
-getWeekDay2(langValue);// тернарный оператор
-/* пункт 2
-У нас есть переменная namePerson. Если значение этой переменной “Артем” то вывести в консоль 
-“директор”, если значение “Максим” 
-то вывести в консоль “преподаватель”, с любым другим значением вывести в консоль “студент” */
-let namePerson = prompt('введи ваше имя');
-namePerson ==='Артем'? console.log('директор'):namePerson ==='Максим'?console.log('преподаватель'):console.log('студент');//это тоже работает
+}
+ };
+ let a =15;
+ let b = ' 12345678910111213141516171819202 ';
+ let c = ' abc ';
+ console.log(foo(a));
+ console.log(foo(b));
+ console.log(foo(c));
+ 
+ let gat = document.getElementById('day');
+ gat.insertAdjacentHTML('beforeEnd',a);
+ gat.insertAdjacentHTML('beforeEnd',b);
+ gat.insertAdjacentHTML('beforeEnd',c);
