@@ -1,33 +1,27 @@
 'use strict';
-/* Создайте функцию, которая принимает 1 аргумент (название произвольное)
 
-— Если в качестве аргумента передана не строка - функция оповещает об этом пользователя
 
-— В полученной (как аргумент) строке функция должна убрать все пробелы в начале и в конце
-
-— Если строка более 30 знаков - то после 30го символа часть текста скрывается и вместо них появляются три точки (...) */
- const foo=(variable)=>{
-if(typeof(variable)!=='string'){
-  console.log('typeof:',typeof('не строка',variable));
-}else{
- variable = variable.trim();
-  if(variable.length > 30){
-     variable = variable.substring(0,30);
-    variable +='...';
-    console.log(variable);
-  }else{
-    console.log(variable);
+const numero=(arr)=>{
+  for(let i=0; i < arr.length; i++){
+    let strNum = String(arr[i]).slice(0,1);
+    let num = Number.parseInt(strNum);
+    if(num ===2 || num ===4 ){
+      console.log('arr[i]',arr[i]);
+    }
   }
+};
+let arr = [ 1654,23,287,64,48,235,245,97,41,245,78];
+numero(arr);
+
+let n = 100;
+
+nextPrime:
+for (let i = 2; i <= n; i++) { // Для всех i...
+
+  for (let j = 2; j < i; j++) { // проверить, делится ли число..
+    if (i % j === 0) {
+      continue nextPrime;
+    } // не подходит, берём следующее
+  }
+  console.log( i, 'делитель этого числа 1 и ', i);
 }
- };
- let a =15;
- let b = '012345678901234567890123456789012345';
- let c = ' abc ';
- foo(a);
- foo(b);
- foo(c);
- 
-//  let gat = document.getElementById('day');
-//  gat.insertAdjacentHTML('beforeEnd',a);
-//  gat.insertAdjacentHTML('beforeEnd',b);
-//  gat.insertAdjacentHTML('beforeEnd',c);
