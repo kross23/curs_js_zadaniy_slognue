@@ -17,11 +17,13 @@ numero(arr);
 let n = 100;
 const prostoe=(n)=>{
   
-  nextPrime:
+  next:
   for (let i = 2; i <= n; i++) { // Для всех i...
   
     for (let j = 2; j < i; j++) { // проверить, делится ли число..
-      if (i % j === 0) {continue nextPrime;} // не подходит, берём следующее
+      if (i % j === 0) {
+        continue next;
+      } // не подходит, берём следующее
     }
   
     console.log(i,'делитель числа 1 и ',i ); // простое число
