@@ -1,14 +1,15 @@
-.weekend{
-color: blue;
-font-style: italic;
+.weekend {
+    color: blue;
+    font-style: italic;
 }
-.curent{
+
+.curent {
     font-weight: 600;
-  /*font-style: italic;*/
-   // color:gray;
+
+    // color:gray;
 }
 
 
-body{
-    background:whitesmoke;
+body {
+    background: whitesmoke;
 }
