@@ -1,32 +1,27 @@
 'use strict';
 
+const day=()=>{
+let arrWeek=['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Воскресенье'];
+let d = document;
+let date = new Date();
+let day = date.getDay();
+//debugger;
+day-=1;
+console.log(day);
 
-const numero=(arr)=>{
-  for(let i=0; i < arr.length; i++){
-    let strNum = String(arr[i]).slice(0,1);
-    let num = Number.parseInt(strNum);
-    if(num ===2 || num ===4 ){
-      console.log('arr[i]',arr[i]);
+day+='';
+  for(let i in arrWeek){
+    let tex = document.querySelector("#ol"); //получаем обьект по ID
+    let p = document.createElement("LI");    // создаем элемент списка
+      if(i ==='6'||i==='7') {                // если индекс массива и номер выходных 
+        p.classList.add('weekend');          // присваивам класс 
+    }else if(i === day){                     // если индекс совпадает с текушим днем то присваиваем класс
+      p.classList.add('curent');
     }
+  p.innerHTML = arrWeek[i];                  // вкладываем в элемент содержимое массива    
+  tex.appendChild(p);                        // вставлям в страницу
   }
 };
-//2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101,
-let arr = [ 1654,23,287,64,48,235,245,97,41,245,78];
-numero(arr);
+day();
 
-let n = 100;
-const prostoe=(n)=>{
-  
-  next:
-  for (let i = 2; i <= n; i++) { // Для всех i...
-  
-    for (let j = 2; j < i; j++) { // проверить, делится ли число..
-      if (i % j === 0) {
-        continue next;
-      } // не подходит, берём следующее
-    }
-  
-    console.log(i,'делитель числа 1 и ',i ); // простое число
-  }
-};
-prostoe(n);
+//элемент.insertAdjacentText('beforeEnd', arrWeek[i]);

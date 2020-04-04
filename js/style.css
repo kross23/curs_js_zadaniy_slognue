@@ -1,0 +1,15 @@
+.weekend{
+color: blue;
+font-style: italic;
+}
+.curent{
+    font-weight: 600;
+    font-style: italic;
+    color: blue;
+}
+
+
+body{
+    background:whitesmoke;
+    
+}
