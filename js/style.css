@@ -4,12 +4,11 @@ font-style: italic;
 }
 .curent{
     font-weight: 600;
-    font-style: italic;
-    color: blue;
+  /*font-style: italic;*/
+   // color:gray;
 }
 
 
 body{
     background:whitesmoke;
-    
 }
